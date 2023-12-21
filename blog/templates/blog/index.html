@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block content %}
+    <header id="main-navigation">
+        <h1><a href="">Dingyi's Blog</a></h1>
+        <nav>
+            <a href="">All Posts</a>
+        </nav>
+    </header>
+    <section id="welcome">
+        <header>
+            <img src="" alt="Dingyi Yu"/>
+            <h2>DINGYI'S BLOG</h2>
+        </header>
+        <p>Hi, I am Dingyi Yu, and I am open to work.</p>
+    </section>
+
+    <section id="latest-thoughts">
+        <h2>My Latest Thoughts</h2>
+        <ul>
+            <li>
+                <article class="post">
+                    <a href="">
+                        <img src="" alt="Citrus Farm">
+                        <div class="post_content">
+                            <h3>Citrus Farm</h3>
+                            <p>
+The citrus grove basked in the golden glow of the setting sun, its vibrant oranges, lemons, and tangerines hanging like jeweled ornaments amidst the lush, green foliage. The air was sweet with the heady scent of blossoms, intertwining with the earthy aroma of rich, damp soil, creating a refreshing and invigorating atmosphere.
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>
+            I love programming, I love to help others and I enjoy exploring new technologies in general!
+        </p>
+        <p>
+            My goal is to keep on growing as a developer -  and if I could help you do the same, I'd be very happy!
+        </p>
+    </section>
+{% endblock %}
