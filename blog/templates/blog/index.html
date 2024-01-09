@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
     <link rel="stylesheet" href="{% static "blog/index.css" %}">
 {% endblock %}
 
@@ -10,15 +11,10 @@
 {% endblock %}
 
 {% block content %}
-    <header id="main-navigation">
-        <h1><a href="">Dingyi's Blog</a></h1>
-        <nav>
-            <a href="">All Posts</a>
-        </nav>
-    </header>
+
     <section id="welcome">
         <header>
-            <img src="" alt="Dingyi Yu"/>
+            <img src="{% static "blog/images/selfie.jpg" %}" alt="Dingyi Yu"/>
             <h2>DINGYI'S BLOG</h2>
         </header>
         <p>Hi, I am Dingyi Yu, and I am open to work.</p>
@@ -27,19 +23,9 @@
     <section id="latest-thoughts">
         <h2>My Latest Thoughts</h2>
         <ul>
-            <li>
-                <article class="post">
-                    <a href="">
-                        <img src="" alt="Citrus Farm">
-                        <div class="post_content">
-                            <h3>Citrus Farm</h3>
-                            <p>
-The citrus grove basked in the golden glow of the setting sun, its vibrant oranges, lemons, and tangerines hanging like jeweled ornaments amidst the lush, green foliage. The air was sweet with the heady scent of blossoms, intertwining with the earthy aroma of rich, damp soil, creating a refreshing and invigorating atmosphere.
-                            </p>
-                        </div>
-                    </a>
-                </article>
-            </li>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
         </ul>
     </section>
 
